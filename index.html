@@ -1,0 +1,70 @@
+<!-- Copia todo este código en tu archivo index.html en GitHub -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECT - Spectral Electromagnetic Confinement Theory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 leading-relaxed">
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-circle-nodes text-blue-600 text-2xl"></i>
+                <span class="font-bold text-xl tracking-tight">SECT v1.0</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+                <a href="#ontology" class="hover:text-blue-600 transition">Ontología</a>
+                <a href="#stability" class="hover:text-blue-600 transition">Estabilidad</a>
+                <a href="#math" class="hover:text-blue-600 transition">Matemática</a>
+            </div>
+            <a href="SECT_v1.0.md" download class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-blue-700 transition">Descargar MD</a>
+        </nav>
+    </header>
+    <section class="hero-gradient py-20 text-white text-center px-4">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl lg:text-6xl font-extrabold mb-6">Spectral Electromagnetic Confinement Theory</h1>
+            <p class="text-xl text-gray-300 font-light mb-10">Un nuevo paradigma clásico para el autoconfinamiento de energía sin campos externos.</p>
+        </div>
+    </section>
+    <section id="ontology" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-blue-600 font-bold uppercase tracking-widest text-sm mb-4">Misión y Ontología</h2>
+                    <h3 class="text-3xl font-bold mb-6">Un modelo de campo vectorial no lineal</h3>
+                    <p class="text-lg text-gray-600 mb-6">SECT demuestra que la geometría y la auto-interacción del campo pueden generar masa efectiva de forma autónoma.</p>
+                </div>
+                <div class="bg-gray-100 rounded-2xl p-4 overflow-hidden border border-gray-200">
+                    <img src="assets/soliton.png" alt="Soliton" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="stability" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-16">Análisis de Estabilidad de Lyapunov</h2>
+            <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-10 items-center bg-white p-10 rounded-2xl shadow-md border border-gray-100">
+                <div class="text-left">
+                    <h4 class="text-2xl font-bold mb-4 text-blue-700">Robustez del Sistema</h4>
+                    <p class="text-gray-700 mb-6">Desde la ingeniería, la estabilidad se garantiza si el estado fundamental es un mínimo local estricto de energía. Cualquier perturbación obliga al sistema a volver al equilibrio.</p>
+                    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500 italic">"$\delta E > 0$: el sistema es robusto frente al ruido del vacío."</div>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 overflow-hidden">
+                    <img src="assets/lyapunov.png" alt="Lyapunov Diagram" class="w-full h-auto rounded-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-gray-900 text-white py-16 text-center">
+        <p class="text-gray-500 text-sm">&copy; 2026 Proyecto SECT. Basado en SECT_v1.0.</p>
+    </footer>
+</body>
+</html>
