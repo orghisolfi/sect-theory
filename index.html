@@ -1,70 +1,190 @@
-<!-- Copia todo este código en tu archivo index.html en GitHub -->
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SECT - Spectral Electromagnetic Confinement Theory</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .hero-gradient { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #020617; color: #cbd5e1; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Efectos visuales de Física Teórica */
+        .hero-gradient { 
+            background: radial-gradient(circle at center, #1e1b4b 0%, #020617 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=');
+            z-index: 0;
+        }
+        .glass-nav {
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.3);
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+        .glow-text { text-shadow: 0 0 20px rgba(96, 165, 250, 0.5); }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 leading-relaxed">
-    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-            <div class="flex items-center gap-2">
-                <i class="fa-solid fa-circle-nodes text-blue-600 text-2xl"></i>
-                <span class="font-bold text-xl tracking-tight">SECT v1.0</span>
+<body class="leading-relaxed selection:bg-blue-500 selection:text-white">
+
+    <header class="glass-nav sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16 relative z-10">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-atom text-blue-500 text-2xl animate-pulse"></i>
+                <span class="font-bold text-xl tracking-tight text-white glow-text">SECT <span class="text-blue-500 font-light">v1.0</span></span>
             </div>
-            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
-                <a href="#ontology" class="hover:text-blue-600 transition">Ontología</a>
-                <a href="#stability" class="hover:text-blue-600 transition">Estabilidad</a>
-                <a href="#math" class="hover:text-blue-600 transition">Matemática</a>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-slate-400">
+                <a href="#ontology" class="hover:text-blue-400 transition">Ontología</a>
+                <a href="#stability" class="hover:text-blue-400 transition">Estabilidad</a>
+                <a href="#resonance" class="hover:text-blue-400 transition">Resonancia</a>
+                <a href="#cosmology" class="hover:text-blue-400 transition">Cosmología</a>
+                <a href="#math" class="hover:text-blue-400 transition">Matemática</a>
             </div>
-            <a href="docs/SECT_theory.md" download class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-blue-700 transition">Descargar MD</a>
+            <a href="SECT_v1.0.md" download class="bg-blue-600/20 border border-blue-500/50 text-blue-400 px-5 py-2 rounded-md text-sm font-semibold hover:bg-blue-600 hover:text-white transition shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                <i class="fa-solid fa-download mr-2"></i>Descargar MD
+            </a>
         </nav>
     </header>
-    <section class="hero-gradient py-20 text-white text-center px-4">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-4xl lg:text-6xl font-extrabold mb-6">Spectral Electromagnetic Confinement Theory</h1>
-            <p class="text-xl text-gray-300 font-light mb-10">Un nuevo paradigma clásico para el autoconfinamiento de energía sin campos externos.</p>
+
+    <section class="hero-gradient py-24 lg:py-36 text-center px-4 relative">
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="inline-block border border-blue-500/30 bg-blue-500/10 text-blue-300 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-8 shadow-[0_0_10px_rgba(59,130,246,0.2)]">
+                Física Teórica Fundamental
+            </div>
+            <h1 class="text-5xl lg:text-7xl font-extrabold mb-8 tracking-tight text-white glow-text">
+                Spectral Electromagnetic <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Confinement Theory</span>
+            </h1>
+            <p class="text-xl lg:text-2xl text-slate-300 font-light mb-12 max-w-3xl mx-auto leading-relaxed">
+                Un nuevo paradigma clásico para el autoconfinamiento de energía, independiente del sector de color (QCD) y sin mecanismos de Higgs.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="#ontology" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-500 transition shadow-[0_0_20px_rgba(59,130,246,0.4)]">Ver Fundamentos</a>
+                <a href="#math" class="border border-slate-600 text-slate-300 px-8 py-3 rounded-lg font-bold hover:bg-slate-800 hover:text-white transition">Explorar Ecuaciones</a>
+            </div>
         </div>
     </section>
-    <section id="ontology" class="py-24 bg-white">
+
+    <section id="ontology" class="py-24 bg-slate-950 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <h2 class="text-blue-600 font-bold uppercase tracking-widest text-sm mb-4">Misión y Ontología</h2>
-                    <h3 class="text-3xl font-bold mb-6">Un modelo de campo vectorial no lineal</h3>
-                    <p class="text-lg text-gray-600 mb-6">SECT demuestra que la geometría y la auto-interacción del campo pueden generar masa efectiva de forma autónoma.</p>
+                    <h2 class="text-blue-500 font-bold uppercase tracking-widest text-sm mb-4">Misión y Ontología</h2>
+                    <h3 class="text-3xl lg:text-4xl font-bold text-white mb-6">El Solitón Toroidal como Base de la Materia</h3>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed">
+                        SECT propone que las partículas elementales no son puntos, sino <strong>solitones compactos</strong> de campo electromagnético no lineal. Esta estructura toroidal permite el flujo continuo de energía manteniendo una identidad topológica estable.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="border border-slate-700/50 rounded-xl p-2 bg-slate-900/50 backdrop-blur-sm card-hover">
+                            <img src="assets/soliton.png" class="rounded-lg mb-3 h-40 w-full object-cover opacity-90 hover:opacity-100 transition">
+                            <p class="text-xs text-center text-slate-500 font-mono">Render Conceptual</p>
+                        </div>
+                        <div class="border border-slate-700/50 rounded-xl p-2 bg-slate-900/50 backdrop-blur-sm card-hover">
+                            <img src="assets/soliton_physics.png" class="rounded-lg mb-3 h-40 w-full object-cover opacity-90 hover:opacity-100 transition">
+                            <p class="text-xs text-center text-slate-500 font-mono">Simulación Numérica</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-gray-100 rounded-2xl p-4 overflow-hidden border border-gray-200">
-                    <img src="assets/soliton.png" alt="Soliton" class="w-full h-auto rounded-lg shadow-lg">
+                <div class="bg-gradient-to-br from-slate-900 to-slate-950 p-8 rounded-3xl border border-slate-800 shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl"></div>
+                    <h4 class="font-bold text-2xl text-white mb-6">Propiedades Emergentes</h4>
+                    <ul class="space-y-6 text-slate-300">
+                        <li class="flex items-start gap-4">
+                            <div class="bg-blue-500/20 p-2 rounded-lg text-blue-400 mt-1"><i class="fa-solid fa-rotate"></i></div>
+                            <div><strong class="text-white">Autogiro:</strong> El campo posee helicidad intrínseca que emula el spin fundamental.</div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="bg-indigo-500/20 p-2 rounded-lg text-indigo-400 mt-1"><i class="fa-solid fa-compress"></i></div>
+                            <div><strong class="text-white">Finitud:</strong> La energía total es matemáticamente finita, eliminando las singularidades puntuales de la electrodinámica clásica.</div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="bg-purple-500/20 p-2 rounded-lg text-purple-400 mt-1"><i class="fa-solid fa-weight-hanging"></i></div>
+                            <div><strong class="text-white">Inercia (Masa):</strong> La resistencia a cambios en la topología del nudo se manifiesta macroscópicamente como masa efectiva.</div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
-    <section id="stability" class="py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-16">Análisis de Estabilidad de Lyapunov</h2>
-            <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-10 items-center bg-white p-10 rounded-2xl shadow-md border border-gray-100">
-                <div class="text-left">
-                    <h4 class="text-2xl font-bold mb-4 text-blue-700">Robustez del Sistema</h4>
-                    <p class="text-gray-700 mb-6">Desde la ingeniería, la estabilidad se garantiza si el estado fundamental es un mínimo local estricto de energía. Cualquier perturbación obliga al sistema a volver al equilibrio.</p>
-                    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500 italic">"$\delta E > 0$: el sistema es robusto frente al ruido del vacío."</div>
+
+    <section id="stability" class="py-24 bg-slate-900 relative">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIiBzdHJva2Utd2lkdGg9IjEiPjxwb2x5Z29uIHBvaW50cz0iMzAsMCA2MCwzMCAzMCw2MCAwLDMwIiBmaWxsPSJub25lIi8+PC9nPjwvc3ZnPg==')] opacity-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-5xl font-bold mb-4 text-white">Análisis de Estabilidad Estructural</h2>
+                <p class="text-slate-400 max-w-3xl mx-auto text-lg">¿Por qué el solitón no colapsa ni se dispersa? El equilibrio emerge de la competencia estricta entre términos cinéticos y potenciales en el Gauge de Coulomb.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 mb-16">
+                <div class="bg-slate-950 p-6 rounded-2xl shadow-xl border border-slate-800 card-hover group">
+                    <div class="overflow-hidden rounded-xl mb-6 border border-slate-800">
+                        <img src="assets/sect_landscape_3d.png" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-700">
+                    </div>
+                    <h4 class="font-bold text-xl mb-2 text-white">Paisaje de Energía 3D</h4>
+                    <p class="text-slate-400 text-sm">Visualización del funcional $E(A, L)$. El mínimo global representa el estado de equilibrio donde la atracción DoY se balancea con la repulsión UV ($\lambda_4$).</p>
                 </div>
-                <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 overflow-hidden">
-                    <img src="assets/lyapunov.png" alt="Lyapunov Diagram" class="w-full h-auto rounded-lg">
+                <div class="bg-slate-950 p-6 rounded-2xl shadow-xl border border-slate-800 card-hover group">
+                    <div class="overflow-hidden rounded-xl mb-6 border border-slate-800">
+                        <img src="assets/sect_pure_stability.png" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-700">
+                    </div>
+                    <h4 class="font-bold text-xl mb-2 text-white">Estabilidad bajo Norma Fija</h4>
+                    <p class="text-slate-400 text-sm">Análisis de $E(L)$ para diferentes valores de carga inyectada ($\mu$). Para cada $\mu$ existe un radio de confinamiento $L_* > 0$ estrictamente estable.</p>
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-gradient-to-r from-blue-900 to-indigo-950 border border-blue-500/30 p-10 rounded-3xl shadow-2xl flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4 text-blue-300">Criterio de Lyapunov</h3>
+                    <p class="text-blue-100/80 text-lg mb-6 leading-relaxed">
+                        "La estabilidad está garantizada si el solitón es un mínimo local estricto del funcional de energía. Cualquier desviación requiere un trabajo positivo, forzando al sistema a regresar a su forma óptima."
+                    </p>
+                    <div class="bg-black/40 p-4 rounded-lg border-l-4 border-blue-400 font-mono text-blue-300 text-sm shadow-inner">
+                        $$ \delta^2 E[\mathbf{A}_*] > 0 $$ 
+                        El sistema es matemáticamente robusto frente al ruido del vacío cuántico.
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex flex-col gap-4">
+                    <img src="assets/lyapunov.png" class="w-full rounded-xl shadow-lg border border-white/10 opacity-90">
                 </div>
             </div>
         </div>
     </section>
-    <footer class="bg-gray-900 text-white py-16 text-center">
-        <p class="text-gray-500 text-sm">&copy; 2026 Proyecto SECT. Basado en SECT_v1.0.</p>
-    </footer>
-</body>
-</html>
+
+    <section id="resonance" class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-red-500 font-bold uppercase tracking-widest text-sm mb-4">Dinámica Vibracional</h2>
+                    <h3 class="text-3xl lg:text-4xl font-bold text-white mb-6">Gap Espectral y Teorema de Vakhitov-Kolokolov</h3>
+                    <p class="text-lg text-slate-400 mb-6 leading-relaxed">
+                        El solitón no es estático; posee una <strong>frecuencia de resonancia interna $\omega$</strong>. La completación dinámica 4D de SECT demuestra que esta frecuencia define un <i>Gap de Masa</i> estricto.
+                    </p>
+                    <div class="bg-red-950/20 border border-red-900/50 p-6
