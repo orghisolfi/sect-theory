@@ -35,54 +35,55 @@ body{
     line-height:1.6;
 }
 
-.wrapper{
-    max-width:1200px;
-    margin:auto;
-    padding:40px 30px;
-    display:grid;
-    grid-template-columns: 2.3fr 1fr;
-    gap:40px;
+/* Header */
+header{
+    border-bottom:1px solid var(--border);
+    padding:20px 40px;
 }
 
-h1,h2,h3{
+header h1{
+    margin:0;
     font-family:'Playfair Display',serif;
+    font-size:24px;
     color:var(--text);
 }
 
-h1{ font-size:30px; margin-bottom:5px; }
-h2{ font-size:20px; margin-top:35px; }
-h3{ font-size:16px; margin-top:25px; }
-
-p{ margin:12px 0; }
-
-.main{
-    max-width:800px;
+header span{
+    font-size:13px;
+    color:var(--muted);
 }
 
-.sidebar{
+/* Layout */
+.layout{
+    display:grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap:40px;
+    max-width:1200px;
+    margin:auto;
+    padding:40px;
+}
+
+main{
+    max-width:780px;
+}
+
+aside{
     position:sticky;
     top:30px;
     height:fit-content;
+}
+
+h2{
+    font-family:'Playfair Display',serif;
+    font-size:20px;
+    margin-top:30px;
+    color:var(--text);
 }
 
 .panel{
     background:var(--panel);
     border:1px solid var(--border);
     padding:18px;
-    margin-bottom:20px;
-}
-
-img{
-    max-width:520px;
-    display:block;
-    margin:18px auto;
-    border:1px solid var(--border);
-}
-
-.caption{
-    text-align:center;
-    font-size:13px;
-    margin-top:-8px;
     margin-bottom:20px;
 }
 
@@ -95,96 +96,39 @@ a:hover{
     text-decoration:underline;
 }
 
-ul{
-    padding-left:18px;
-}
-
-.small{
+footer{
+    border-top:1px solid var(--border);
+    padding:25px 40px;
     font-size:13px;
+    color:var(--muted);
 }
 </style>
 </head>
 
 <body>
 
-<div class="wrapper">
-
-<div class="main">
-
+<header>
 <h1>SETT</h1>
-<div class="small">Spectral Electromagnetic Torsion Theory</div>
+<span>Spectral Electromagnetic Torsion Theory</span>
+</header>
 
-<h2>Problema Fundamental</h2>
+<div class="layout">
 
-<p>
-Las ecuaciones lineales del electromagnetismo no permiten soluciones compactas de energía finita en espacio libre. Cualquier configuración localizada se dispersa o colapsa bajo evolución dinámica.
-</p>
+<main>
 
-<p>
-SETT investiga si la torsión interna de un campo vectorial real puede generar estructuras autoconfinadas mediante un mecanismo puramente variacional no lineal.
-</p>
+<!-- AQUÍ VA EL CONTENIDO VARIABLE -->
 
-<h2>Ontología</h2>
+<h2>Título de la Página</h2>
+<p>Contenido aquí.</p>
 
-<p>
-El modelo asume un campo vectorial real definido en el subespacio transversal ($\nabla \cdot \mathbf{A}=0$). La masa emerge como energía propia del minimizador compacto bajo restricción de norma.
-</p>
+</main>
 
-<p>
-No se introducen campos escalares, ni sector de color, ni dinámica gauge lineal como estructura fundamental.
-</p>
-
-<h2>Arquitectura del Modelo</h2>
+<aside>
 
 <div class="panel">
-$$
-E[\mathbf A] =
-\int |\nabla \times \mathbf A|^2 d^3x
-+ m^2 \int |\mathbf A|^2 d^3x
-+ \beta \iint j(x)K(x-y)j(y)\, d^3x d^3y
-+ \frac{\lambda_4}{M^4}\int |\nabla \times \mathbf A|^4 d^3x
-$$
-</div>
-
-<p>
-La competencia entre control infrarrojo, atracción no local y repulsión ultravioleta permite la aparición de un mínimo compacto.
-</p>
-
-<h2>Evidencia Numérica</h2>
-
-<img src="assets/sect_landscape_3d.png">
-<div class="caption">
-Paisaje energético $E(A,L)$ mostrando mínimo local estricto.
-</div>
-
-<img src="assets/soliton.png">
-<div class="caption">
-Configuración axial aproximada del estado confinado.
-</div>
-
-<h2>Evolución Conceptual</h2>
-
-<p>
-MTC introdujo la intuición torsional inicial.  
-YECT formalizó el problema variacional.  
-SECT estabilizó la estructura no local.  
-GECO exploró consistencia geométrica.  
-SETT consolida la formulación ontológica y espectral.
-</p>
-
-<h2>Programa en Desarrollo</h2>
-
-<p>
-El manuscrito se desarrolla capítulo por capítulo con análisis formal completo.
-</p>
-
-</div>
-
-<div class="sidebar">
-
-<div class="panel">
-<h3>Capítulos</h3>
+<strong>Capítulos</strong>
 <ul>
+<li><a href="index.html">Inicio</a></li>
 <li><a href="cap1.html">1. Ontología</a></li>
 <li><a href="cap2.html">2. Coercividad</a></li>
 <li><a href="cap3.html">3. Concentración–Compactación</a></li>
@@ -194,31 +138,22 @@ El manuscrito se desarrolla capítulo por capítulo con análisis formal complet
 </div>
 
 <div class="panel">
-<h3>Ingeniería</h3>
+<strong>Secciones</strong>
 <ul>
-<li><a href="engineering.html">Interpretación dinámica</a></li>
-<li><a href="resonance.html">Resonancia interna</a></li>
-<li><a href="numerics.html">Análisis numérico</a></li>
-</ul>
-</div>
-
-<div class="panel">
-<h3>Proyecto</h3>
-<ul>
+<li><a href="engineering.html">Ingeniería</a></li>
+<li><a href="numerics.html">Análisis Numérico</a></li>
 <li><a href="predictions.html">Predicciones</a></li>
-<li><a href="history.html">Historia conceptual</a></li>
-<li><a href="SETT_v1.0.pdf">Manuscrito completo</a></li>
+<li><a href="history.html">Historia Conceptual</a></li>
 </ul>
 </div>
 
-<div class="panel small">
-Oscar Ghisolfi<br>
-<a href="mailto:tugmail@gmail.com">tugmail@gmail.com</a>
-</div>
+</aside>
 
 </div>
 
-</div>
+<footer>
+Oscar Ghisolfi — Investigación independiente en desarrollo.
+</footer>
 
 </body>
 </html>
