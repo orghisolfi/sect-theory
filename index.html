@@ -48,11 +48,6 @@ header h1{
     color:var(--text);
 }
 
-header span{
-    font-size:13px;
-    color:var(--muted);
-}
-
 /* Layout */
 .layout{
     display:grid;
@@ -65,19 +60,13 @@ header span{
 
 main{
     max-width:780px;
+    min-height:500px;
 }
 
 aside{
     position:sticky;
     top:30px;
     height:fit-content;
-}
-
-h2{
-    font-family:'Playfair Display',serif;
-    font-size:20px;
-    margin-top:30px;
-    color:var(--text);
 }
 
 .panel{
@@ -90,6 +79,7 @@ h2{
 a{
     color:var(--accent);
     text-decoration:none;
+    cursor:pointer;
 }
 
 a:hover{
@@ -114,13 +104,8 @@ footer{
 
 <div class="layout">
 
-<main>
-
-<!-- AQUÍ VA EL CONTENIDO VARIABLE -->
-
-<h2>Título de la Página</h2>
-<p>Contenido aquí.</p>
-
+<main id="content">
+Cargando...
 </main>
 
 <aside>
@@ -128,22 +113,20 @@ footer{
 <div class="panel">
 <strong>Capítulos</strong>
 <ul>
-<li><a href="index.html">Inicio</a></li>
-<li><a href="cap1.html">1. Ontología</a></li>
-<li><a href="cap2.html">2. Coercividad</a></li>
-<li><a href="cap3.html">3. Concentración–Compactación</a></li>
-<li><a href="cap4.html">4. Estructura Espectral</a></li>
-<li><a href="cap5.html">5. Extensión Dinámica</a></li>
+<li><a onclick="loadPage('home')">Inicio</a></li>
+<li><a onclick="loadPage('cap1')">1. Ontología</a></li>
+<li><a onclick="loadPage('cap2')">2. Coercividad</a></li>
+<li><a onclick="loadPage('cap3')">3. Concentración–Compactación</a></li>
+<li><a onclick="loadPage('cap4')">4. Estructura Espectral</a></li>
 </ul>
 </div>
 
 <div class="panel">
-<strong>Secciones</strong>
+<strong>Ingeniería</strong>
 <ul>
-<li><a href="engineering.html">Ingeniería</a></li>
-<li><a href="numerics.html">Análisis Numérico</a></li>
-<li><a href="predictions.html">Predicciones</a></li>
-<li><a href="history.html">Historia Conceptual</a></li>
+<li><a onclick="loadPage('engineering')">Interpretación dinámica</a></li>
+<li><a onclick="loadPage('numerics')">Análisis numérico</a></li>
+<li><a onclick="loadPage('predictions')">Predicciones</a></li>
 </ul>
 </div>
 
@@ -152,8 +135,24 @@ footer{
 </div>
 
 <footer>
-Oscar Ghisolfi — Investigación independiente en desarrollo.
+Oscar Ghisolfi — Investigación independiente.
 </footer>
+
+<script>
+async function loadPage(page){
+    const container = document.getElementById('content');
+    try{
+        const response = await fetch('content/' + page + '.html');
+        const html = await response.text();
+        container.innerHTML = html;
+        MathJax.typesetPromise();
+    }catch(err){
+        container.innerHTML = "Error cargando contenido.";
+    }
+}
+
+loadPage('home');
+</script>
 
 </body>
 </html>
