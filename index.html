@@ -16,15 +16,15 @@ MathJax = {
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap');
 
 :root{
     --bg:#121417;
-    --panel:#1b1e23;
+    --panel:#1a1d22;
     --border:#272c33;
-    --text:#e5e5e5;
+    --text:#e6e6e6;
     --muted:#9aa0aa;
-    --accent:#a5b8ff;
+    --accent:#9fb4ff;
 }
 
 body{
@@ -32,63 +32,58 @@ body{
     background:var(--bg);
     color:var(--muted);
     font-family:'Inter',sans-serif;
-    line-height:1.55;
+    line-height:1.6;
 }
 
-.container{
-    max-width:1000px;
+.wrapper{
+    max-width:1200px;
     margin:auto;
-    padding:35px 25px;
+    padding:40px 30px;
+    display:grid;
+    grid-template-columns: 2.3fr 1fr;
+    gap:40px;
 }
 
 h1,h2,h3{
     font-family:'Playfair Display',serif;
     color:var(--text);
-    margin-bottom:10px;
 }
 
-h1{ font-size:32px; }
-h2{ font-size:22px; margin-top:35px; }
-h3{ font-size:18px; margin-top:25px; }
+h1{ font-size:30px; margin-bottom:5px; }
+h2{ font-size:20px; margin-top:35px; }
+h3{ font-size:16px; margin-top:25px; }
 
-p{ margin:10px 0; }
+p{ margin:12px 0; }
+
+.main{
+    max-width:800px;
+}
+
+.sidebar{
+    position:sticky;
+    top:30px;
+    height:fit-content;
+}
 
 .panel{
     background:var(--panel);
     border:1px solid var(--border);
     padding:18px;
-    margin:18px 0;
+    margin-bottom:20px;
 }
 
 img{
-    max-width:550px;
+    max-width:520px;
     display:block;
-    margin:18px auto 8px auto;
+    margin:18px auto;
     border:1px solid var(--border);
 }
 
 .caption{
     text-align:center;
     font-size:13px;
-    color:var(--muted);
-    margin-bottom:15px;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:10px;
-    font-size:14px;
-}
-
-th,td{
-    border:1px solid var(--border);
-    padding:6px 8px;
-}
-
-th{
-    background:var(--panel);
-    color:var(--text);
+    margin-top:-8px;
+    margin-bottom:20px;
 }
 
 a{
@@ -100,10 +95,8 @@ a:hover{
     text-decoration:underline;
 }
 
-hr{
-    border:none;
-    border-top:1px solid var(--border);
-    margin:30px 0;
+ul{
+    padding-left:18px;
 }
 
 .small{
@@ -113,30 +106,35 @@ hr{
 </head>
 
 <body>
-<div class="container">
+
+<div class="wrapper">
+
+<div class="main">
 
 <h1>SETT</h1>
-<p class="small">Spectral Electromagnetic Torsion Theory</p>
+<div class="small">Spectral Electromagnetic Torsion Theory</div>
+
+<h2>Problema Fundamental</h2>
 
 <p>
-Programa de investigación independiente orientado al estudio del autoconfinamiento variacional de energía en un campo vectorial torsionado.
-</p>
-
-<hr>
-
-<h2>Resumen Técnico</h2>
-
-<p>
-SETT investiga si configuraciones estacionarias de un campo vectorial real pueden producir estructuras compactas de energía finita mediante interacción no lineal interna y regularización ultravioleta.
+Las ecuaciones lineales del electromagnetismo no permiten soluciones compactas de energía finita en espacio libre. Cualquier configuración localizada se dispersa o colapsa bajo evolución dinámica.
 </p>
 
 <p>
-El desarrollo conceptual evolucionó desde MTC → YECT → SECT → GECO hasta su formulación actual.
+SETT investiga si la torsión interna de un campo vectorial real puede generar estructuras autoconfinadas mediante un mecanismo puramente variacional no lineal.
 </p>
 
-<hr>
+<h2>Ontología</h2>
 
-<h2>Funcional Variacional</h2>
+<p>
+El modelo asume un campo vectorial real definido en el subespacio transversal ($\nabla \cdot \mathbf{A}=0$). La masa emerge como energía propia del minimizador compacto bajo restricción de norma.
+</p>
+
+<p>
+No se introducen campos escalares, ni sector de color, ni dinámica gauge lineal como estructura fundamental.
+</p>
+
+<h2>Arquitectura del Modelo</h2>
 
 <div class="panel">
 $$
@@ -149,84 +147,78 @@ $$
 </div>
 
 <p>
-La competencia entre términos infrarrojos, no locales y ultravioleta permite la aparición de un mínimo compacto bajo restricción de norma.
+La competencia entre control infrarrojo, atracción no local y repulsión ultravioleta permite la aparición de un mínimo compacto.
 </p>
 
-<hr>
-
-<h2>Paisaje Energético Numérico</h2>
+<h2>Evidencia Numérica</h2>
 
 <img src="assets/sect_landscape_3d.png">
 <div class="caption">
-Figura 1 — Superficie energética $E(A,L)$ con mínimo local estricto.
+Paisaje energético $E(A,L)$ mostrando mínimo local estricto.
 </div>
-
-<hr>
-
-<h2>Configuración Axial Estimada</h2>
 
 <img src="assets/soliton.png">
 <div class="caption">
-Figura 2 — Aproximación toroidal de flujo torsionado bajo simetría axial.
+Configuración axial aproximada del estado confinado.
 </div>
 
-<hr>
-
-<h2>Resultados Numéricos Representativos</h2>
-
-<table>
-<tr>
-<th>Parámetro</th>
-<th>Rango típico</th>
-<th>Interpretación</th>
-</tr>
-<tr>
-<td>$m^2$</td>
-<td>~1</td>
-<td>Escala infrarroja</td>
-</tr>
-<tr>
-<td>$\beta$</td>
-<td>0.4–0.7</td>
-<td>Atracción no local</td>
-</tr>
-<tr>
-<td>$\lambda_4$</td>
-<td>0.1–0.3</td>
-<td>Estabilización UV</td>
-</tr>
-<tr>
-<td>$L_*$</td>
-<td>~1.5</td>
-<td>Radio emergente</td>
-</tr>
-</table>
-
-<hr>
-
-<h2>Estructura del Manuscrito</h2>
-
-<ul>
-<li><a href="cap1.html">Capítulo 1 — Ontología</a></li>
-<li><a href="cap2.html">Capítulo 2 — Coercividad</a></li>
-<li><a href="cap3.html">Capítulo 3 — Concentración–Compactación</a></li>
-<li><a href="cap4.html">Capítulo 4 — Estructura Espectral</a></li>
-<li><a href="cap5.html">Capítulo 5 — Extensión Dinámica</a></li>
-</ul>
-
-<hr>
-
-<h2>Contacto</h2>
+<h2>Evolución Conceptual</h2>
 
 <p>
-Oscar Ghisolfi<br>
-<a href="mailto:tugmail@gmail.com">tugmail@gmail.com</a>
+MTC introdujo la intuición torsional inicial.  
+YECT formalizó el problema variacional.  
+SECT estabilizó la estructura no local.  
+GECO exploró consistencia geométrica.  
+SETT consolida la formulación ontológica y espectral.
+</p>
+
+<h2>Programa en Desarrollo</h2>
+
+<p>
+El manuscrito se desarrolla capítulo por capítulo con análisis formal completo.
 </p>
 
 </div>
-</body>
-</html>
+
+<div class="sidebar">
+
+<div class="panel">
+<h3>Capítulos</h3>
+<ul>
+<li><a href="cap1.html">1. Ontología</a></li>
+<li><a href="cap2.html">2. Coercividad</a></li>
+<li><a href="cap3.html">3. Concentración–Compactación</a></li>
+<li><a href="cap4.html">4. Estructura Espectral</a></li>
+<li><a href="cap5.html">5. Extensión Dinámica</a></li>
+</ul>
+</div>
+
+<div class="panel">
+<h3>Ingeniería</h3>
+<ul>
+<li><a href="engineering.html">Interpretación dinámica</a></li>
+<li><a href="resonance.html">Resonancia interna</a></li>
+<li><a href="numerics.html">Análisis numérico</a></li>
+</ul>
+</div>
+
+<div class="panel">
+<h3>Proyecto</h3>
+<ul>
+<li><a href="predictions.html">Predicciones</a></li>
+<li><a href="history.html">Historia conceptual</a></li>
+<li><a href="SETT_v1.0.pdf">Manuscrito completo</a></li>
+</ul>
+</div>
+
+<div class="panel small">
+Oscar Ghisolfi<br>
+<a href="mailto:tugmail@gmail.com">tugmail@gmail.com</a>
+</div>
 
 </div>
+
+</div>
+
 </body>
 </html>
