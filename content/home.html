@@ -1,80 +1,118 @@
-<h2>SETT — Spectral Electromagnetic Torsion Theory</h2>
+<h1>SETT — Spectral Electromagnetic Torsion Theory</h1>
 
 <p>
-SETT investiga la posibilidad de que configuraciones compactas de energía puedan emerger
-como estados estacionarios de un campo vectorial transversal no lineal.
+<strong>Declaración Ontológica:</strong>  
+SETT es una teoría clásica efectiva autónoma que investiga si configuraciones
+topológicas no lineales de un campo vectorial transversal pueden generar
+estructuras compactas de energía finita en vacío.
 </p>
 
 <p>
-Las ecuaciones lineales del electromagnetismo clásico no permiten soluciones
-localizadas de energía finita en espacio libre: toda configuración se dispersa.
-La pregunta estructural es si la introducción controlada de no linealidad
-y acoplamiento espectral no local puede modificar ese comportamiento.
+La teoría no depende del mecanismo de Higgs ni del sector de color.
+En este marco, el vacío se modela como un medio capaz de sostener
+estados torsionales estacionarios bajo dinámica no lineal.
 </p>
 
-<h3>Planteamiento Central</h3>
+<div class="critical-note">
+<strong>Nota técnica:</strong>
+Mientras la literatura estándar explora auto-interacción electromagnética
+mediante correcciones QED o acoplamientos torsionales geométricos,
+SETT introduce un mecanismo variacional basado en un
+<strong>Gap Espectral Dinámico</strong> que emerge de la competencia
+entre escalas infrarrojas, no locales y ultravioleta.
+</div>
+
+<h2>Estructura del Solitón Torsional</h2>
 
 <p>
-El modelo considera un campo vectorial real $\mathbf A(x)$ definido en el subespacio
-transversal ($\nabla\cdot\mathbf A = 0$).  
-Se estudia el funcional de energía:
+El objeto central es una configuración compacta $\mathbf A_*$ que minimiza
+el funcional de energía bajo restricción de norma.
+La morfología típica presenta estructura cuasi-toroidal.
 </p>
+
+<img src="plots/plot_soliton_physics.png">
+<p style="text-align:center;">
+<em>Figura 1: Densidad de energía estacionaria obtenida numéricamente.</em>
+</p>
+
+<h2>Funcional de Energía</h2>
 
 <div class="panel">
 $$
 E[\mathbf A] =
 \int |\nabla \times \mathbf A|^2 d^3x
 + m^2 \int |\mathbf A|^2 d^3x
-+ \beta \iint j(x)K(x-y)j(y)\, d^3x d^3y
-+ \frac{\lambda_4}{M^4}\int |\nabla \times \mathbf A|^4 d^3x
+- \beta \iint K(|x-y|) j(x) j(y) dx dy
++ \frac{\lambda_4}{M^4} \int |\nabla \times \mathbf A|^4 d^3x
+$$
+
+$$
+K(r) = \frac{e^{-\mu_1 r} - e^{-\mu_2 r}}{r}
 $$
 </div>
 
-<p>
-La competencia entre:
-</p>
+<h3>Competencia de Escalas</h3>
 
 <ul>
-<li>Control infrarrojo ($m^2$)</li>
-<li>Atracción espectral no local ($\beta$)</li>
-<li>Repulsión ultravioleta cuártica ($\lambda_4$)</li>
+<li><strong>Escala IR ($m^2$):</strong> Controla dispersión de baja frecuencia.</li>
+<li><strong>Interacción no local ($\beta$):</strong> Introduce atracción espectral.</li>
+<li><strong>Control UV ($\lambda_4$):</strong> Previene colapso singular.</li>
 </ul>
 
-<p>
-permite la aparición de un mínimo compacto bajo restricción de norma.
+<img src="plots/sect_energy_landscape_3d.png">
+<p style="text-align:center;">
+<em>Figura 2: Paisaje energético $E(A,L)$ mostrando mínimo local bajo restricción.</em>
 </p>
 
-<h3>Programa de Investigación</h3>
+<h2>Consistencia Escalar con Datos Hadrónicos</h2>
 
 <p>
-El proyecto se organiza en capítulos formales:
+Utilizando valores experimentales del protón como referencia de escala,
+el modelo produce soluciones estacionarias cuya energía total
+es compatible con la escala hadrónica.
 </p>
 
-<ul>
-<li>Formulación ontológica del campo fundamental.</li>
-<li>Análisis de coercividad y existencia variacional.</li>
-<li>Exclusión de dicotomía por concentración–compactación.</li>
-<li>Estructura espectral y gap dinámico.</li>
-<li>Extensión dinámica efectiva 4D.</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Magnitud</th>
+<th>Valor Experimental</th>
+<th>Resultado SETT</th>
+<th>Interpretación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Masa efectiva</td>
+<td>938 MeV</td>
+<td>$E[\mathbf A_*] \sim 10^3$ MeV</td>
+<td>Auto-energía confinada</td>
+</tr>
+<tr>
+<td>Radio característico</td>
+<td>~0.84 fm</td>
+<td>$L_* \sim 0.8$ fm</td>
+<td>Equilibrio no local / UV</td>
+</tr>
+<tr>
+<td>Gap espectral</td>
+<td>—</td>
+<td>$\omega_{\min} = \sqrt{m^2}$</td>
+<td>Estabilidad lineal</td>
+</tr>
+</tbody>
+</table>
 
-<p>
-El desarrollo es incremental y cada capítulo se publica cuando alcanza cierre técnico suficiente.
+<img src="plots/sect_resonance_frequency.png">
+<p style="text-align:center;">
+<em>Figura 3: Curva $\omega(\mu)$ mostrando existencia de gap infrarrojo.</em>
 </p>
 
-<h3>Estado Actual</h3>
-
 <p>
-El modelo ha alcanzado:
-</p>
-
-<ul>
-<li>Coercividad formal bajo hipótesis explícitas.</li>
-<li>Existencia de minimizador restringido.</li>
-<li>Gap espectral estrictamente positivo en el Hessiano.</li>
-<li>Evidencia numérica consistente con confinamiento compacto.</li>
-</ul>
-
-<p>
-Las próximas etapas abordan robustez estructural y consistencia relativista efectiva.
+<strong>Conclusión:</strong>
+SETT proporciona un marco variacional consistente donde
+configuraciones electromagnéticas no lineales pueden exhibir
+confinamiento clásico de energía y estabilidad local.
+La formalización completa de existencia y estabilidad orbital
+se desarrolla en los capítulos técnicos.
 </p>
