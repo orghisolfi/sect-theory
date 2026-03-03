@@ -16,15 +16,15 @@ MathJax = {
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;500&display=swap');
 
 :root{
-    --bg:#14161a;
-    --panel:#1c1f25;
-    --border:#2a2f36;
-    --text:#e8e8e8;
-    --muted:#a4a9b3;
-    --accent:#9fb4ff;
+    --bg:#121417;
+    --panel:#1b1e23;
+    --border:#272c33;
+    --text:#e5e5e5;
+    --muted:#9aa0aa;
+    --accent:#a5b8ff;
 }
 
 body{
@@ -32,50 +32,58 @@ body{
     background:var(--bg);
     color:var(--muted);
     font-family:'Inter',sans-serif;
-    line-height:1.65;
+    line-height:1.55;
 }
 
 .container{
-    max-width:1150px;
+    max-width:1000px;
     margin:auto;
-    padding:45px 30px;
+    padding:35px 25px;
 }
 
 h1,h2,h3{
     font-family:'Playfair Display',serif;
     color:var(--text);
-    font-weight:600;
+    margin-bottom:10px;
 }
 
-h1{ font-size:46px; margin-bottom:8px; }
-h2{ font-size:28px; margin-top:70px; }
-h3{ font-size:20px; margin-top:40px; }
+h1{ font-size:32px; }
+h2{ font-size:22px; margin-top:35px; }
+h3{ font-size:18px; margin-top:25px; }
 
-a{ color:var(--accent); text-decoration:none; }
-a:hover{ text-decoration:underline; }
+p{ margin:10px 0; }
 
 .panel{
     background:var(--panel);
     border:1px solid var(--border);
-    padding:28px;
-    margin-top:25px;
+    padding:18px;
+    margin:18px 0;
 }
 
 img{
-    max-width:100%;
+    max-width:550px;
+    display:block;
+    margin:18px auto 8px auto;
     border:1px solid var(--border);
+}
+
+.caption{
+    text-align:center;
+    font-size:13px;
+    color:var(--muted);
+    margin-bottom:15px;
 }
 
 table{
     width:100%;
     border-collapse:collapse;
-    margin-top:20px;
+    margin-top:10px;
+    font-size:14px;
 }
 
 th,td{
     border:1px solid var(--border);
-    padding:10px;
-    text-align:left;
+    padding:6px 8px;
 }
 
 th{
@@ -83,15 +91,23 @@ th{
     color:var(--text);
 }
 
-.small{
-    font-size:14px;
-    color:var(--muted);
+a{
+    color:var(--accent);
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
 }
 
 hr{
     border:none;
     border-top:1px solid var(--border);
-    margin:60px 0;
+    margin:30px 0;
+}
+
+.small{
+    font-size:13px;
 }
 </style>
 </head>
@@ -100,29 +116,27 @@ hr{
 <div class="container">
 
 <h1>SETT</h1>
-<div class="small">Spectral Electromagnetic Torsion Theory</div>
+<p class="small">Spectral Electromagnetic Torsion Theory</p>
 
 <p>
-Programa de investigación independiente en física teórica orientado al estudio del autoconfinamiento variacional de energía en un campo vectorial torsionado.
+Programa de investigación independiente orientado al estudio del autoconfinamiento variacional de energía en un campo vectorial torsionado.
 </p>
 
 <hr>
 
-<h2>Resumen Extendido</h2>
+<h2>Resumen Técnico</h2>
 
 <p>
-SETT investiga si configuraciones estacionarias de un campo vectorial real pueden generar estructuras compactas de energía finita mediante un mecanismo puramente no lineal.
+SETT investiga si configuraciones estacionarias de un campo vectorial real pueden producir estructuras compactas de energía finita mediante interacción no lineal interna y regularización ultravioleta.
 </p>
 
 <p>
-El programa evolucionó a través de:
-MTC → YECT → SECT → GECO → SETT,
-con refinamiento progresivo del análisis funcional, coercividad y estructura espectral.
+El desarrollo conceptual evolucionó desde MTC → YECT → SECT → GECO hasta su formulación actual.
 </p>
 
 <hr>
 
-<h2>Estructura Variacional Central</h2>
+<h2>Funcional Variacional</h2>
 
 <div class="panel">
 $$
@@ -135,28 +149,26 @@ $$
 </div>
 
 <p>
-La competencia entre términos infrarrojos, no locales y ultravioleta produce un mínimo compacto bajo restricción de norma.
+La competencia entre términos infrarrojos, no locales y ultravioleta permite la aparición de un mínimo compacto bajo restricción de norma.
 </p>
 
 <hr>
 
-<h2>Paisaje de Energía Numérico</h2>
+<h2>Paisaje Energético Numérico</h2>
 
-<img src="assets/sect_landscape_3d.png" alt="Paisaje Energía">
-
-<p class="small">
-Figura 1. Superficie energética $E(A,L)$ mostrando mínimo local estricto bajo simetría axial.
-</p>
+<img src="assets/sect_landscape_3d.png">
+<div class="caption">
+Figura 1 — Superficie energética $E(A,L)$ con mínimo local estricto.
+</div>
 
 <hr>
 
-<h2>Configuración Estimada del Solitón</h2>
+<h2>Configuración Axial Estimada</h2>
 
-<img src="assets/soliton.png" alt="Solitón Toroidal">
-
-<p class="small">
-Figura 2. Aproximación numérica de configuración toroidal de flujo torsionado.
-</p>
+<img src="assets/soliton.png">
+<div class="caption">
+Figura 2 — Aproximación toroidal de flujo torsionado bajo simetría axial.
+</div>
 
 <hr>
 
@@ -165,51 +177,41 @@ Figura 2. Aproximación numérica de configuración toroidal de flujo torsionado
 <table>
 <tr>
 <th>Parámetro</th>
-<th>Valor típico</th>
-<th>Rol estructural</th>
+<th>Rango típico</th>
+<th>Interpretación</th>
 </tr>
 <tr>
 <td>$m^2$</td>
-<td>0.8 – 1.2</td>
+<td>~1</td>
 <td>Escala infrarroja</td>
 </tr>
 <tr>
 <td>$\beta$</td>
-<td>0.4 – 0.7</td>
-<td>Compactación no local</td>
+<td>0.4–0.7</td>
+<td>Atracción no local</td>
 </tr>
 <tr>
 <td>$\lambda_4$</td>
-<td>0.1 – 0.3</td>
+<td>0.1–0.3</td>
 <td>Estabilización UV</td>
 </tr>
 <tr>
 <td>$L_*$</td>
-<td>1.4 – 1.6</td>
-<td>Radio óptimo emergente</td>
+<td>~1.5</td>
+<td>Radio emergente</td>
 </tr>
 </table>
 
 <hr>
 
-<h2>Índice del Manuscrito en Desarrollo</h2>
+<h2>Estructura del Manuscrito</h2>
 
 <ul>
-<li><a href="cap1.html">Capítulo 1 — Ontología y Fundamentos</a></li>
-<li><a href="cap2.html">Capítulo 2 — Análisis Variacional y Coercividad</a></li>
-<li><a href="cap3.html">Capítulo 3 — Exclusión de Dicotomía</a></li>
-<li><a href="cap4.html">Capítulo 4 — Estructura Espectral y Gap</a></li>
+<li><a href="cap1.html">Capítulo 1 — Ontología</a></li>
+<li><a href="cap2.html">Capítulo 2 — Coercividad</a></li>
+<li><a href="cap3.html">Capítulo 3 — Concentración–Compactación</a></li>
+<li><a href="cap4.html">Capítulo 4 — Estructura Espectral</a></li>
 <li><a href="cap5.html">Capítulo 5 — Extensión Dinámica</a></li>
-</ul>
-
-<hr>
-
-<h2>Consecuencias Exploratorias</h2>
-
-<ul>
-<li>Emergencia de escala estable sin ruptura escalar explícita.</li>
-<li>Relación carga–frecuencia $\omega = \partial E/\partial \mu$.</li>
-<li>Robustez estructural bajo perturbaciones moderadas.</li>
 </ul>
 
 <hr>
@@ -218,8 +220,12 @@ Figura 2. Aproximación numérica de configuración toroidal de flujo torsionado
 
 <p>
 Oscar Ghisolfi<br>
-<a href="mailto:orghsolfi@gmail.com">orghisolfi@gmail.com</a>
+<a href="mailto:tugmail@gmail.com">tugmail@gmail.com</a>
 </p>
+
+</div>
+</body>
+</html>
 
 </div>
 </body>
